@@ -1,0 +1,7 @@
+.my_input {
+  height: 50px;
+  padding: 0 25px;
+  &::placeholder {
+    font-style: italic;
+  }
+}

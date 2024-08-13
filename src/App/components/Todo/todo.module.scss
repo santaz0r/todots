@@ -1,0 +1,104 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+
+    outline: none;
+    margin-right: 5px;
+    border: 1px solid darkolivegreen;
+    border-radius: 5px;
+
+    transition: background-color 0.1s linear;
+    svg {
+      fill: darkolivegreen;
+      scale: 1.5;
+    }
+
+    &:hover {
+      background-color: darkolivegreen;
+      svg {
+        fill: white;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+      border: 1px solid darkred;
+      svg {
+        fill: darkred;
+      }
+
+      &:hover {
+        background-color: darkred;
+        svg {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  input {
+    appearance: none;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    &:checked {
+      &::after {
+        content: '\2713';
+        color: green;
+        font-size: 24px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+  &:has(input:checked) {
+    .todo__text {
+      text-decoration: line-through;
+
+      opacity: 0.5;
+    }
+  }
+}
+
+.important {
+  font-weight: 600;
+  color: lightseagreen;
+}
