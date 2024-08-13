@@ -1,1 +1,1 @@
-1. Чем можно заменить "as" в App на 79 строке?
+- [Deploy](https://rc-todots.netlify.app/)
